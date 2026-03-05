@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "The Rise of Battery Energy Storage Systems in U.S. Power Markets",
+    "summary": "How large-scale battery installations are reshaping grid reliability and energy trading across the United States.",
+    "source": "Energy Storage News",
+    "url": "https://www.energy-storage.news",
+    "date": "2026-03-01",
+    "category": "Energy Storage",
+    "manual": false
+  },
+  {
+    "id": "2",
+    "title": "Blockchain Technology Transforming Energy Trading Platforms",
+    "summary": "New blockchain-based platforms are enabling peer-to-peer energy trading with unprecedented transparency and security.",
+    "source": "Bloomberg Energy",
+    "url": "https://www.bloomberg.com/energy",
+    "date": "2026-02-28",
+    "category": "Blockchain",
+    "manual": false
+  },
+  {
+    "id": "3",
+    "title": "AI-Powered Grid Management: The Next Frontier",
+    "summary": "Artificial intelligence is being deployed to predict energy demand, optimize storage dispatch, and improve grid stability.",
+    "source": "Utility Dive",
+    "url": "https://www.utilitydive.com",
+    "date": "2026-02-25",
+    "category": "AI & Technology",
+    "manual": false
+  },
+  {
+    "id": "4",
+    "title": "DOE Announces $3.5 Billion in Clean Energy Storage Funding",
+    "summary": "The U.S. Department of Energy has committed major funding to accelerate next-generation energy storage deployment.",
+    "source": "Department of Energy",
+    "url": "https://www.energy.gov",
+    "date": "2026-02-20",
+    "category": "Policy",
+    "manual": false
+  }
+]
