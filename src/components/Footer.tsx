@@ -56,10 +56,10 @@ export default function Footer() {
               <p>Suite 115, PMB293,</p>
               <p>McLean, VA 22101</p>
               <a
-                href="mailto:info@espxglobal.com"
+                href="mailto:jenny.hou@espxglobal.com"
                 className="inline-block mt-2 text-espx-cyan hover:text-espx-cyan-dim transition-colors"
               >
-                info@espxglobal.com
+                jenny.hou@espxglobal.com
               </a>
             </div>
           </div>
