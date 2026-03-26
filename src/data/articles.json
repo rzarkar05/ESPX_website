@@ -1,5 +1,16 @@
 [
   {
+    "id": "puf-tech-solution",
+    "title": "A Tech Based Solution to the Tech Based Growth Challenge",
+    "summary": "How Energy Storage Resources and State-of-Charge certainty can address load growth challenges, improve grid reliability, and open new energy market opportunities in the wake of the FERC PJM Court Order.",
+    "source": "Public Utilities Fortnightly",
+    "url": "/news/puf-tech-solution",
+    "date": "2026-05-01",
+    "category": "Energy Storage",
+    "manual": true,
+    "featured": true
+  },
+  {
     "id": "1",
     "title": "The Rise of Battery Energy Storage Systems in U.S. Power Markets",
     "summary": "How large-scale battery installations are reshaping grid reliability and energy trading across the United States.",

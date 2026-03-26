@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface Article {
   id: string;
@@ -98,49 +99,67 @@ export default function NewsPage() {
 
           {/* Articles grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((article, i) => (
-              <motion.a
-                key={article.id}
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={fadeUp}
-                className="glass-card rounded-2xl p-6 flex flex-col group"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-espx-cyan/10 text-espx-cyan border border-espx-cyan/20">
-                    {article.category}
-                  </span>
-                  {article.manual && (
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-espx-teal/20 text-espx-teal-light border border-espx-teal/30">
-                      ESPX
-                    </span>
-                  )}
-                </div>
+            {filtered.map((article, i) => {
+              const isInternal = article.url.startsWith("/");
+              const CardWrapper = isInternal ? Link : "a";
+              const linkProps = isInternal
+                ? { href: article.url }
+                : {
+                    href: article.url,
+                    target: "_blank" as const,
+                    rel: "noopener noreferrer",
+                  };
 
-                <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-espx-cyan transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
+              return (
+                <motion.div
+                  key={article.id}
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                >
+                  <CardWrapper
+                    {...linkProps}
+                    className="glass-card rounded-2xl p-6 flex flex-col group h-full block"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-espx-cyan/10 text-espx-cyan border border-espx-cyan/20">
+                        {article.category}
+                      </span>
+                      {article.manual && (
+                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-espx-teal/20 text-espx-teal-light border border-espx-teal/30">
+                          ESPX
+                        </span>
+                      )}
+                      {(article as Article & { featured?: boolean }).featured && (
+                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 animate-pulse">
+                          Featured
+                        </span>
+                      )}
+                    </div>
 
-                <p className="text-sm text-gray-400 mb-4 flex-1 line-clamp-3">
-                  {article.summary}
-                </p>
+                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-espx-cyan transition-colors line-clamp-2">
+                      {article.title}
+                    </h3>
 
-                <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-espx-cyan/10">
-                  <span>{article.source}</span>
-                  <span>
-                    {new Date(article.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </span>
-                </div>
-              </motion.a>
-            ))}
+                    <p className="text-sm text-gray-400 mb-4 flex-1 line-clamp-3">
+                      {article.summary}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-espx-cyan/10">
+                      <span>{article.source}</span>
+                      <span>
+                        {new Date(article.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+                  </CardWrapper>
+                </motion.div>
+              );
+            })}
           </div>
 
           {filtered.length === 0 && (
