@@ -98,6 +98,41 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Featured Article Banner */}
+      <Link
+        href="/news/puf-tech-solution"
+        className="block bg-gradient-to-r from-espx-navy-light/95 via-espx-teal-dark/40 to-espx-navy-light/95 border-t border-espx-cyan/10 hover:border-espx-cyan/30 transition-all duration-300 group"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-center gap-4 flex-wrap">
+          <span className="flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-espx-cyan opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-espx-cyan" />
+            </span>
+            <span className="text-xs font-semibold text-espx-cyan uppercase tracking-wider">
+              New Article
+            </span>
+          </span>
+          <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+            <span className="font-medium">Public Utilities Fortnightly:</span>{" "}
+            A Tech Based Solution to the Tech Based Growth Challenge
+          </span>
+          <svg
+            className="w-4 h-4 text-espx-cyan group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </Link>
+
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
