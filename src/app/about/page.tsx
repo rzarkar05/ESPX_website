@@ -106,19 +106,20 @@ function LeaderCard({
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
       className="flip-card-perspective"
-      style={{ height: 420 }}
+      style={{ height: 440 }}
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         {/* Front */}
         <div className="flip-card-front bg-espx-navy-light border border-white/[0.06]">
-          <div className="relative w-full h-[280px]">
+          <div className="relative w-full h-[300px]">
             <Image
               src={leader.image}
               alt={leader.name}
               fill
-              className="object-cover object-top"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover object-[center_20%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-espx-navy-light via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-espx-navy-light to-transparent" />
           </div>
 
           <div className="px-5 pt-4 pb-5 flex flex-col justify-between" style={{ height: 140 }}>
