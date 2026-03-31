@@ -12,7 +12,7 @@ export default function Footer() {
               alt="ESPX Global"
               width={140}
               height={63}
-              className="logo-themed mb-4"
+              className="mb-4"
             />
             <p className="text-sm text-gray-400 leading-relaxed">
               ESPX Global is a grid scale energy storage technology purpose-entity integrating
