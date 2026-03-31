@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const leaders = [
   {
@@ -105,14 +106,139 @@ const leaders = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
-  }),
-};
+function LeaderCard({
+  leader,
+  index,
+}: {
+  leader: (typeof leaders)[0];
+  index: number;
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+      className="flip-card-perspective"
+      style={{ height: 420 }}
+    >
+      <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+        {/* Front */}
+        <div className="flip-card-front bg-espx-navy-light border border-white/[0.06]">
+          <div className="relative w-full h-[280px]">
+            <Image
+              src={leader.image}
+              alt={leader.name}
+              fill
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-espx-navy-light via-transparent to-transparent" />
+          </div>
+
+          <div className="px-5 pt-4 pb-5 flex flex-col justify-between" style={{ height: 140 }}>
+            <div>
+              <h3 className="text-lg font-bold text-white leading-tight">
+                {leader.name}
+              </h3>
+              <p className="text-sm text-espx-cyan/70 mt-1">ESPX Global</p>
+            </div>
+
+            <div className="flex items-center justify-end">
+              <button
+                onClick={() => setIsFlipped(true)}
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-espx-cyan transition-colors group"
+                aria-label={`View bio for ${leader.name}`}
+              >
+                <svg
+                  className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"
+                  />
+                </svg>
+                Bio
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Back */}
+        <div className="flip-card-back bg-espx-navy-light border border-white/[0.06] flex flex-col">
+          <div className="p-5 flex-1 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
+            <h3 className="text-lg font-bold text-white mb-4">
+              {leader.name}
+            </h3>
+
+            <div className="mb-4">
+              <h4 className="text-xs font-semibold text-espx-cyan uppercase tracking-wider mb-2">
+                Specialties
+              </h4>
+              <ul className="space-y-1.5">
+                {leader.specialties.map((s) => (
+                  <li
+                    key={s}
+                    className="text-xs text-gray-400 flex items-start gap-2 leading-relaxed"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-espx-cyan/60 mt-1.5 flex-shrink-0" />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-semibold text-espx-cyan uppercase tracking-wider mb-2">
+                Experience
+              </h4>
+              <ul className="space-y-1.5">
+                {leader.experience.map((e) => (
+                  <li
+                    key={e}
+                    className="text-xs text-gray-400 flex items-start gap-2 leading-relaxed"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-espx-teal/60 mt-1.5 flex-shrink-0" />
+                    {e}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="px-5 py-4 border-t border-white/[0.06] flex items-center justify-end flex-shrink-0">
+            <button
+              onClick={() => setIsFlipped(false)}
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-espx-cyan transition-colors group"
+              aria-label={`Close bio for ${leader.name}`}
+            >
+              <svg
+                className="w-5 h-5 group-hover:rotate-180 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"
+                />
+              </svg>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -151,83 +277,17 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-espx-cyan uppercase tracking-[0.2em] mb-4">
-              Leadership
-            </h2>
-            <p className="text-3xl md:text-4xl font-bold text-white">
-              Our Team
+            <p className="text-sm font-semibold text-espx-cyan uppercase tracking-[0.2em] mb-4">
+              ESPX Leadership Team
             </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white">
+              Strength in Experience
+            </h2>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {leaders.map((leader, i) => (
-              <motion.div
-                key={leader.name}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                className="glass-card rounded-2xl overflow-hidden"
-              >
-                <div className="flex flex-col lg:flex-row">
-                  {/* Photo */}
-                  <div className="lg:w-64 flex-shrink-0">
-                    <div className="relative w-full h-64 lg:h-full">
-                      <Image
-                        src={leader.image}
-                        alt={leader.name}
-                        fill
-                        className="object-cover object-top"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-espx-navy/80 to-transparent lg:bg-gradient-to-r" />
-                    </div>
-                  </div>
-
-                  {/* Info */}
-                  <div className="flex-1 p-8">
-                    <h3 className="text-2xl font-bold text-white mb-6">
-                      {leader.name}
-                    </h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div>
-                        <h4 className="text-sm font-semibold text-espx-cyan uppercase tracking-wider mb-3">
-                          Specialties
-                        </h4>
-                        <ul className="space-y-2">
-                          {leader.specialties.map((s) => (
-                            <li
-                              key={s}
-                              className="text-sm text-gray-400 flex items-start gap-2"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-espx-cyan/60 mt-1.5 flex-shrink-0" />
-                              {s}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-espx-cyan uppercase tracking-wider mb-3">
-                          Experience
-                        </h4>
-                        <ul className="space-y-2">
-                          {leader.experience.map((e) => (
-                            <li
-                              key={e}
-                              className="text-sm text-gray-400 flex items-start gap-2"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-espx-teal/60 mt-1.5 flex-shrink-0" />
-                              {e}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              <LeaderCard key={leader.name} leader={leader} index={i} />
             ))}
           </div>
         </div>

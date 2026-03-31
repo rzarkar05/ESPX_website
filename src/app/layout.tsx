@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "ESPX | Energy Storage Power Exchange",
   description:
-    "A multi-purpose entity focused on the energy storage sector of the power market. Elevating energy markets through blockchain, AI, and technology-driven innovation.",
+    "ESPX Global is a grid scale energy storage technology purpose-entity integrating science methodologies to enhance client's energy storage financial and operational decision-making to more effectively meet electrical demand challenges of the new digital based economy.",
   keywords: [
     "energy storage",
     "power exchange",

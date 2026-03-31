@@ -220,9 +220,10 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            A multi-purpose entity focused on the energy storage sector of the
-            power market. Elevating energy markets through technology-driven
-            innovation.
+            ESPX Global is a grid scale energy storage technology purpose-entity integrating
+            science methodologies to enhance client&apos;s energy storage financial and operational
+            decision-making to more effectively meet electrical demand challenges of the new
+            digital based economy.
           </motion.p>
 
           <motion.div
