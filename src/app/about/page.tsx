@@ -73,22 +73,6 @@ const leaders = [
     ],
   },
   {
-    name: "Peter Jenson",
-    image: "/images/PeterJenson.png",
-    specialties: [
-      "Board or Senior Advisor in Strategic, Operational, Financial, and Trading",
-      "Energy Trading",
-      "Complex financial instruments",
-      "Hedge Funds, Broker Dealers and Financial Services",
-    ],
-    experience: [
-      "Partner, MD, CFO for broker dealers and Global Controller Citadel",
-      "CFO of Constellation Commodities Group (former JV partner with Goldman Sachs)",
-      "Partner Banking and Capital Markets PwC NY",
-      "Founder & Managing Partner of Denison Gate private investment vehicle and consultancy",
-    ],
-  },
-  {
     name: "David Owens",
     image: "/images/DavidOwens.png",
     specialties: [

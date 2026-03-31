@@ -46,7 +46,7 @@ export default function Navbar() {
               width={140}
               height={63}
               priority
-              className="brightness-110 group-hover:brightness-125 transition-all duration-300"
+              className="logo-themed group-hover:brightness-125 transition-all duration-300"
             />
           </motion.div>
         </Link>

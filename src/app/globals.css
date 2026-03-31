@@ -227,3 +227,9 @@ a, button, input, textarea, select {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+/* Logo color theme alignment */
+.logo-themed {
+  filter: brightness(1.1) hue-rotate(15deg) saturate(1.4);
+  transition: filter 0.3s ease;
+}
