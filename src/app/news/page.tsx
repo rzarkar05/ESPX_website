@@ -50,7 +50,7 @@ export default function NewsPage() {
       : articles.filter((a) => a.category === filter);
 
   return (
-    <div className="pt-24">
+    <div className="pt-48">
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-espx-teal-dark/20 to-transparent" />
         <div className="absolute inset-0 bg-grid opacity-50" />

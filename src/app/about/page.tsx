@@ -74,7 +74,7 @@ const leaders = [
   },
   {
     name: "David Owens",
-    image: "/images/DavidOwens.png",
+    image: "/images/DavidOwensPhoto.jpg",
     specialties: [
       "US Energy Industry, Who is Who",
       "Electric Utility Issues, Industry Restructuring, and Transformation",
@@ -86,6 +86,26 @@ const leaders = [
       "Vice Chairman, Puerto Rico Energy Restructuring Commission",
       "Retired COO & EVP, Edison Electric Institute",
       "Chief Engineer for Division of Rates and Corporate Regulation, SEC",
+    ],
+  },
+  {
+    name: "Charles Yeung",
+    image: "/images/CharlesYeung2026.jpg",
+    specialties: [
+      "More information needed"
+    ],
+    experience: [
+      "More information needed"
+    ],
+  },
+  {
+    name: "Todd Strauss",
+    image: "/images/ToddStrausss.jpg",
+    specialties: [
+      "More information needed"
+    ],
+    experience: [
+      "More information needed"
     ],
   },
 ];
@@ -110,39 +130,26 @@ function LeaderCard({
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         {/* Front */}
-        <div className="flip-card-front bg-espx-navy-light border border-white/[0.06]">
-          <div className="relative w-full h-[176px] bg-espx-navy">
+        <div className="flip-card-front bg-espx-navy-light border border-white/[0.06] flex flex-col">
+          <div className="relative w-full flex-1 bg-espx-navy">
             <Image
               src={leader.image}
               alt={leader.name}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover object-[center_20%]"
+              className="object-contain object-bottom"
             />
-            {/* Navy tint overlay to blend photo backgrounds with theme */}
-            <div className="absolute inset-0 bg-espx-navy/30 mix-blend-multiply" />
-            {/* Vignette effect - darkens edges while keeping center clear */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 60% at center 40%, transparent 40%, rgba(10, 22, 40, 0.7) 100%)",
-              }}
-            />
-            {/* Bottom fade into card */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-espx-navy-light to-transparent" />
           </div>
 
-          <div className="px-5 pt-4 pb-5 flex flex-col justify-between" style={{ height: 140 }}>
+          <div className="px-4 py-3 flex items-center justify-between flex-shrink-0 bg-espx-navy-light/80">
             <div>
-              <h3 className="text-lg font-bold text-white leading-tight">
+              <h3 className="text-base font-bold text-white leading-tight">
                 {leader.name}
               </h3>
-              <p className="text-sm text-espx-cyan/70 mt-1">ESPX Global</p>
+              <p className="text-xs text-espx-cyan/70 mt-0.5">ESPX Global</p>
             </div>
 
-            <div className="flex items-center justify-end">
-              <button
+            <button
                 onClick={() => setIsFlipped(true)}
                 className="flex items-center gap-2 text-sm text-gray-400 hover:text-espx-cyan transition-colors group"
                 aria-label={`View bio for ${leader.name}`}
@@ -162,7 +169,6 @@ function LeaderCard({
                 </svg>
                 Bio
               </button>
-            </div>
           </div>
         </div>
 
@@ -238,7 +244,7 @@ function LeaderCard({
 
 export default function AboutPage() {
   return (
-    <div className="pt-36">
+    <div className="pt-48">
       {/* Hero Banner */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-espx-teal-dark/20 to-transparent" />

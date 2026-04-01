@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function PUFArticlePage() {
   return (
-    <div className="pt-24">
+    <div className="pt-48">
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-espx-teal-dark/20 to-transparent" />
