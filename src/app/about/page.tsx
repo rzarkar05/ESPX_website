@@ -106,12 +106,12 @@ function LeaderCard({
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
       className="flip-card-perspective"
-      style={{ height: 440 }}
+      style={{ height: 360 }}
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         {/* Front */}
         <div className="flip-card-front bg-espx-navy-light border border-white/[0.06]">
-          <div className="relative w-full h-[300px] bg-espx-navy">
+          <div className="relative w-full h-[176px] bg-espx-navy">
             <Image
               src={leader.image}
               alt={leader.name}
@@ -238,7 +238,7 @@ function LeaderCard({
 
 export default function AboutPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-36">
       {/* Hero Banner */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-espx-teal-dark/20 to-transparent" />
