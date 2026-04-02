@@ -14,9 +14,8 @@ export default function Footer() {
               height={63}
               className="mb-4"
             />
-            <p className="text-sm text-gray-400 leading-relaxed">
-              ESPX Global is a technology startup developing a centralized platform to evaluate financial and operational
-              trade-offs and opportunities to integrate battery energy storage into the evolving electric power market. We collect, curate and standardize energy storage asset data, deploying data science methodologies to enhance our client&apos;s decision making with insights on how energy storage impacts electricity grids and markets.
+            <p className="text-sm text-gray-400 font-medium">
+              Energy Storage Power Exchange
             </p>
           </div>
 
