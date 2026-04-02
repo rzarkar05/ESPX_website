@@ -116,8 +116,8 @@ export default function Navbar() {
             </span>
           </span>
           <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
-            <span className="font-medium">Public Utilities Fortnightly:</span>{" "}
-            A Tech Based Solution to the Tech Based Growth Challenge
+            <span className="font-medium">PUBLIC UTILITIES FORTNIGHTLY:</span>{" "}
+            Utility Scale Energy Storage
           </span>
           <svg
             className="w-4 h-4 text-espx-cyan group-hover:translate-x-1 transition-transform"
