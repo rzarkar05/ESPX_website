@@ -14,9 +14,6 @@ export default function Footer() {
               height={63}
               className="mb-4"
             />
-            <p className="text-sm text-gray-400 font-medium">
-              Energy Storage Power Exchange
-            </p>
           </div>
 
           <div>
