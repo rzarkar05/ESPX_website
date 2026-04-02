@@ -100,7 +100,9 @@ export default function Navbar() {
 
       {/* Featured Article Banner */}
       <Link
-        href="/news/puf-tech-solution"
+        href="/images/publications/ESPX%20Global_Energy%20Storage_PUF%20article_April%202026.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
         className="block bg-gradient-to-r from-espx-navy-light/95 via-espx-teal-dark/40 to-espx-navy-light/95 border-t border-espx-cyan/10 hover:border-espx-cyan/30 transition-all duration-300 group"
       >
         <div className="mx-auto max-w-7xl px-6 py-2 flex items-center justify-center gap-4 flex-wrap">
