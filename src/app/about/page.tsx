@@ -92,10 +92,15 @@ const leaders = [
     name: "Charles Yeung",
     image: "/images/CharlesYeung2026.jpg",
     specialties: [
-      "More information needed"
+      "Electric utility engineer and power markets advocate",
+      "Registered Professional Engineer and MBA",
+      "Expertise in Inverter-Based Resources, wind solar and battery energy storage",
     ],
     experience: [
-      "More information needed"
+      "Experience at utilities, power marketers and the Southwest Power Pool RTO",
+      "Forming NERC electric reliability standards for grid reliability, security and market growth",
+      "Held numerous leadership positions on NERC committees and the ISO/RTO Council",
+      "Collaborated with all sectors and players of the wholesale electric industry",
     ],
   },
   {
