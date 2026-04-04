@@ -4,7 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const leaders = [
+type Leader = {
+  name: string;
+  image: string;
+  bio?: string;
+  specialties: string[];
+  experience: string[];
+};
+
+const leaders: Leader[] = [
   {
     name: "Jenny Hou",
     image: "/images/JennyHou.png",
@@ -75,6 +83,7 @@ const leaders = [
   {
     name: "David Owens",
     image: "/images/DavidOwensPhoto.jpg",
+    bio: "After 36 years of service, Owens retired in mid-2017 as executive vice president of the Edison Electric Institute (EEI). He was the first African-American to hold an officer title with the organization. The Institute represents all US investor-owned electric companies. He spearheaded efforts to invest in the nation's electric infrastructure with new technology enhancing energy efficiency with smart buildings, smart meters and smart grids. Instrumental behind the founding of the American Association of Blacks in Energy, he has mentored generations of young men and women pursuing careers in energy.",
     specialties: [
       "US Energy Industry, Who is Who",
       "Electric Utility Issues, Industry Restructuring, and Transformation",
@@ -82,10 +91,10 @@ const leaders = [
       "Grid Modernization & Digital Transformation",
     ],
     experience: [
-      "Board Member, Xcel Energy",
-      "Vice Chairman, Puerto Rico Energy Restructuring Commission",
+      "Former Board Member, Xcel Energy",
+      "Former Vice Chairman, Puerto Rico Electric Power Authority",
       "Retired COO & EVP, Edison Electric Institute",
-      "Chief Engineer for Division of Rates and Corporate Regulation, SEC",
+      "Chief Engineer for Division of Rates and Corporate Regulation, Security Exchange Commission",
     ],
   },
   {
@@ -106,11 +115,20 @@ const leaders = [
   {
     name: "Todd Strauss",
     image: "/images/ToddStrausss.jpg",
+    bio: "Todd has more than 30 years of experience in the electricity industry. With his unique blend of quantitative expertise, strong communication skills, and sharp business acumen, Todd has led analytic teams at utilities, consulting, and academia. Todd has deep hands-on knowledge and experience at the intersection of public policy and commercial activity. Todd held various leadership roles at Pacific Gas and Electric Company, culminating as Senior Director of Analytics, Innovation, and Strategy. Todd earned his PhD in Industrial Engineering and Operations Research at the University of California at Berkeley, and SB majoring in mathematics at the Massachusetts Institute of Technology.",
     specialties: [
-      "More information needed"
+      "Analytics for energy and finance",
+      "Electricity policy and regulation",
+      "Strategic planning",
+      "Stakeholder negotiations",
     ],
     experience: [
-      "More information needed"
+      "Adjunct Professor, University of California at Berkeley",
+      "Senior Director, Analytics, Innovation, and Strategy, PG&E",
+      "Principal, PHB Hagler Bailly",
+      "Assistant Professor, Yale School of Management",
+      "Gilbert White Fellow, Resources for the Future",
+      "Regulatory Fellow, California Public Utilities Commission",
     ],
   },
 ];
@@ -119,7 +137,7 @@ function LeaderCard({
   leader,
   index,
 }: {
-  leader: (typeof leaders)[0];
+  leader: Leader;
   index: number;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -183,6 +201,12 @@ function LeaderCard({
             <h3 className="text-lg font-bold text-white mb-4">
               {leader.name}
             </h3>
+
+            {leader.bio && (
+              <p className="text-xs text-gray-300 mb-4 leading-relaxed">
+                {leader.bio}
+              </p>
+            )}
 
             <div className="mb-4">
               <h4 className="text-xs font-semibold text-espx-cyan uppercase tracking-wider mb-2">
