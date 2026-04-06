@@ -209,8 +209,8 @@ export default function Home() {
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6">
               <span className="text-white">ESPX</span>
             </h1>
-            <p className="text-xl md:text-2xl text-espx-cyan/80 font-light tracking-[0.15em] uppercase mb-2">
-              Energy Storage Power Exchange
+            <p className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Energy Storage <span className="text-espx-cyan">Power Exchange</span>
             </p>
           </motion.div>
 
