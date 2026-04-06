@@ -275,7 +275,7 @@ export default function AboutPage() {
   return (
     <div className="pt-48">
       {/* Hero Banner */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-espx-teal-dark/20 to-transparent" />
         <div className="absolute inset-0 bg-grid opacity-50" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
@@ -300,7 +300,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-20">
+      <section className="pt-14 pb-20">
         <div className="mx-auto max-w-7xl px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -308,12 +308,13 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-semibold text-espx-cyan uppercase tracking-[0.2em] mb-4">
-              ESPX Leadership Team
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Strength in Experience
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              ESPX <span className="text-espx-cyan">Leadership Team</span>
             </h2>
+            {/* Keeping the subtitle in case it is still desired, but styled as a subtitle */}
+            <p className="text-xl text-gray-300">
+              Strength in Experience
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
