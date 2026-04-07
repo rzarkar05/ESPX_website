@@ -200,7 +200,7 @@ export default function Home() {
         <HeroScene />
         <div className="absolute inset-0 bg-gradient-to-b from-espx-navy/50 via-transparent to-espx-navy z-[1]" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24 mt-12 md:mt-16">
           <motion.div
             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
